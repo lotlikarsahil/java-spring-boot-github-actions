@@ -31,7 +31,7 @@ pipeline {
 			environment{
 			
 				DOCKER_CREDS = credentials('docker-cred')
-				IMAGE_TAG = java-spring-boot-jenkins:${BUILD_NUMBER}
+				IMAGE_TAG = "java-spring-boot-jenkins:${BUILD_NUMBER}"
 			
 			}
 			steps{
