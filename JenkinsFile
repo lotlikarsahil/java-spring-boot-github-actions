@@ -7,17 +7,24 @@ pipeline {
 	
 	stages {
 		stage('Checkout'){
-			
-			git branch: 'main', url: 'https://github.com/lotlikarsahil/java-spring-boot-github-actions.git'
 		
+			steps{
+			
+				git branch: 'main', url: 'https://github.com/lotlikarsahil/java-spring-boot-github-actions.git'
+				
+			}
 		}
 		
 		stage('Build and Test'){
 		
-			sh 'mvn clean package'
+		    steps{
 			
-			sh 'mvn test'
-		
+				sh 'mvn clean package'
+			
+			    sh 'mvn test'
+			
+			}
+			
 		}
 	
 	}
