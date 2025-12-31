@@ -1,0 +1,24 @@
+pipeline {
+	agent any
+
+    tools {
+		maven "jenkins-maven"
+	}
+	
+	stages {
+		stage('Checkout'){
+			
+			git branch: 'main', url: 'https://github.com/lotlikarsahil/java-spring-boot-github-actions.git'
+		
+		}
+		
+		stage('Build and Test'){
+		
+			sh 'mvn clean package'
+			
+			sh 'mvn test'
+		
+		}
+	
+	}
+}
