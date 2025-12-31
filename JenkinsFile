@@ -28,12 +28,6 @@ pipeline {
 		}
 		
 		stage('Build and Push Docker Image'){
-		    agent {
-				docker {
-					image 'docker:27-cli'
-					args '-v /var/run/docker.sock:/var/run/docker.sock'
-				}
-			}
 			environment{
 			
 				DOCKER_CREDS = credentials('docker-cred')
